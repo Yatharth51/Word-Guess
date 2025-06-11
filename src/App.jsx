@@ -102,7 +102,7 @@ function App() {
           ></Word>
         );
       })}
-      {allGuessesUsed && !isGameOver && (
+      {(allGuessesUsed||isGameOver) && (
         <div className="solution-container">
           <div className="button-group">
             <button
@@ -115,7 +115,7 @@ function App() {
               Play Again
             </button>
           </div>
-          {showSolution && (
+          {showSolution && !isGameOver && (
             <p className="solution-text">
               The word was: <strong>{solution?.toUpperCase()}</strong>
             </p>
